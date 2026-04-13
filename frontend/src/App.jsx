@@ -93,6 +93,15 @@ function App() {
                 <div className="rating">
                   ⭐ {originalMovie.vote_average.toFixed(1)}
                 </div>
+                {originalMovie.genres && originalMovie.genres.length > 0 && (
+                  <div className="genres">
+                    {originalMovie.genres.map((genre, index) => (
+                      <span key={index} className="genre-tag">
+                        {genre}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -118,6 +127,15 @@ function App() {
                       <p className="release-date">
                         {new Date(movie.release_date).getFullYear()}
                       </p>
+                    )}
+                    {movie.genres && movie.genres.length > 0 && (
+                      <div className="genres">
+                        {movie.genres.map((genre, index) => (
+                          <span key={index} className="genre-tag">
+                            {genre}
+                          </span>
+                        ))}
+                      </div>
                     )}
                   </div>
                 </div>
